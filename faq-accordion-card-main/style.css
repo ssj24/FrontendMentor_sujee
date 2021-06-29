@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+:root {
+    --darkText: hsl(238, 29%, 16%);
+    --softRed: hsl(14, 88%, 65%);
+    --softViolet: hsl(273, 75%, 66%);
+    --softBlue: hsl(240, 73%, 65%);
+    --grayBlue: hsl(237, 12%, 33%);
+    --darkGrayBlue: hsl(240, 6%, 50%);
+    --lightGrayBlue: hsl(240, 5%, 91%);
+}
+ul li {
+    list-style: none;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, var(--softViolet) 0%, var(--softBlue) 100%);
+    overflow: hidden;
+}
+.wrapper {
+    width: 920px;
+    height: 510px;
+    background: white;
+    border-radius: 30px;
+    display: flex;
+    position: relative;
+}
+.leftCard {
+    width: 45%;
+}
+.patternImg {
+    position: absolute;
+    top: -50%;
+    left: -60%;
+}
+.boxImg {
+    position: absolute;
+    top: 40%;
+    left: -10%;
+}
+.mainImg {
+    position: absolute;
+    top: 15%;
+    left: -7%;
+}
+.rightCard {
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.questions {
+    width: 65%;
+}
+.rightCard h1 {
+    font-size: 2em;
+}
+.rightCard ul {
+    padding: 0;
+}
+.rightCard li {
+    display: block;
+    line-height: 3em;
+    border-bottom: 1px solid var(--lightGrayBlue);
+    position: relative;
+    color: var(--darkGrayBlue);
+    font-weight: 700;
+}
+.rightCard li.active {
+    color: var(--grayBlue);
+}
+.rightCard li:hover {
+    color: var(--softRed);
+    cursor: pointer;
+}
+.rightCard li:after {
+    display: inline-block;
+    content: url(/images/icon-arrow-down.svg);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.rightCard li.active:after {
+    transform: rotate(180deg);
+}
+.rightCard li p {
+    margin-top: 0;
+    line-height: 1.5em;
+    font-size: 12px;
+    font-weight: 400;
+    display: none;
+    color: var(--darkGrayBlue);
+}
+.rightCard li.active p {
+    display: block;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+@media only screen and (max-width: 600px) {
+    .wrapper {
+        width: 90%;
+        height: 70%;
+        margin-top: 100px;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .leftCard {
+        width: 100%;
+        height: 20%;
+    }
+    .rightCard {
+        flex-shrink: 0;
+        flex-grow: 0;
+        width: 100%;
+        height: 80%;
+    }
+    .questions h1 {
+        text-align: center;
+        font-size: 2.3em;
+        margin-bottom: 0;
+    }
+    .questions {
+        height: 100%;
+        width: 90%;
+        font-size: 15px;
+    }
+    .questions li {
+        line-height: 3.5em;
+    }
+    .rightCard li p {
+        margin-right: 10%;
+        font-size: 13px;
+    }
+    .patternImg {
+        width: 80%;
+        top: -28%;
+        left: 10%;
+        z-index: 1;
+    }
+    .boxImg {
+        width: 35%;
+        top: -10%;
+        left: 5%;
+    }
+    .mainImg {
+        width: 80%;
+        top: -22%;
+        left: 10%;
+    }
+}
