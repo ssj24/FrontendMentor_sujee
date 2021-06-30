@@ -2,17 +2,7 @@
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+[toc]
 
 ## Overview
 
@@ -32,6 +22,10 @@ Users should be able to:
 
 <img src="./images/mobile.png" alt="mobile screen" style="zoom:30%;" />
 
+### Link
+
+https://qna-accordion-frontend-mentor.vercel.app/
+
 ## My process
 
 ### Built with
@@ -40,3 +34,7 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
+
+### What I learned
+
+I've realized that I am not used to make responsive pages. I chose simple project but I got stuck several times. I needed to google a lot. Studying CSS is necessary for me.
