@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --color-soft: hsl(215, 51%, 70%);
+    --color-cyan: hsl(178, 100%, 50%);
+    --color-line: hsl(215, 32%, 27%);
+    --color-white: hsl(0, 0%, 100%);
+    --main-bg: hsl(217, 54%, 11%);
+    --card-bg: hsl(216, 50%, 16%);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+
+body {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    color: var(--color-soft);
+    background-color: var(--main-bg);
+}
+
+.cardContainer {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    padding: 20px;
+    width: 340px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+}
+
+
+/* ----------- image Container ------------- */
+.imgContainer {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.imgContainer img {
+    width: 100%;
+    border-radius: 10px;
+}
+.imgContainer > .hoverImg {
+    width: 50px;
+    display: none;
+    position:absolute;
+    left: 42%;
+    top: 42%;
+}
+.imgContainer > .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: var(--color-cyan);
+    opacity: 0;
+    transition: .5s ease;
+}
+.imgContainer:hover > .overlay {
+    opacity: .5;
+}
+.imgContainer:hover > .hoverImg {
+    display:block;
+    z-index: 2;
+}
+
+
+/* ------------ text Container -------------- */
+.textContainer {
+    width: 100%;
+}
+.title {
+    font-weight: 600;
+    color: var(--color-white);
+    font-size: 22px;
+    height: 50px;
+    letter-spacing: .5px;
+}
+.mainText {
+    line-height: 28px;
+}
+
+
+/* ------------- card Info ---------------- */
+.cardInfo {
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+}
+.coinValue img {
+    vertical-align: middle;
+}
+.coinValue p {
+    margin-left: 5px;
+    font-weight: 600;
+    display: inline-block;
+    font-size: 16px;
+    color: var(--color-cyan);
+}
+.cardDate > img {
+    display: inline-block;
+    vertical-align: middle;
+}
+.cardDate p {
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+/* --------------- card footer ----------------- */
+.cardFooter {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.208);
+    padding: 20px 0 10px 0;
+}
+.cardFooter .userImg {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid var(--color-white);
+}
+.cardFooter .userImg img {
+    width: 33px;
+    vertical-align: middle;
+}
+.cardFooter .creator {
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10px;
+}
+.cardFooter .creator span {
+    color: var(--color-white);
+    font-weight: 400;
+}
+
+/* --------------- mobile -------------- */
+@media screen and (max-width: 375px) {
+    body {
+        font-size: 16px;
+    }
+    .cardContainer {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin: auto;
+        padding: 30px;
+        width: 330px;
+        height: 545px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-between;
+        background-color: var(--card-bg);
+        border-radius: 10px;
+    }
+    .imgContainer {
+        width: 275px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+    .title {
+        font-size: 20px;
+        height: 30px;
+    }
+}
