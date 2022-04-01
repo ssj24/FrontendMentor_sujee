@@ -32,6 +32,22 @@ body {
     background-color: var(--light_grayish_cyan);
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input[type=number]:focus {
+    outline: none;
+}
+
 input[type="radio"] {
     display: none;
 }
@@ -76,6 +92,14 @@ h1 {
     width: 90%;
     position: relative;
 }
+.errMsg {
+    position: absolute;
+    right: 5%;
+    top: 0;
+    font-size: 16px;
+    color: red;
+    opacity: 0;
+}
 .inputSection label {
     position: absolute;
     left: 5%;
@@ -88,12 +112,24 @@ h1 {
     height: 40px;
     border: none;
     border-radius: 5px;
+    padding-right: 20px;
     text-align: end;
     font-size: 24px;
     color: var(--grayish_cyan);
+    cursor: pointer;
+}
+.numInput:focus {
+    border: 2px solid var(--strong_cyan);
+}
+.numInput:invalid {
+    border: 2px solid red;
+}
+.numInput:invalid + .errMsg {
+    opacity: 1;
 }
 
 .tipSection {
+    width: 90%;
 }
 .radioBtns {
     display: inline-flex;
@@ -108,17 +144,28 @@ h1 {
     background-color: var(--very_dark_cyan);
     color: var(--white);
     border-radius: 5px;
+    cursor: pointer;
 }
-.radioBtns .customBtn {
+.radioBtns .per6 {
+    background-color: var(--very_light_grayish_cyan);
+    color: var(--dark_grayish_cyan);
     font-family: 'Space Mono', monospace;
-    width: 30%;
-    margin: 5px;
-    padding: 5px 0;
     font-size: 24px;
-    text-align: center;
-    background-color: var(--very_dark_cyan);
-    color: var(--white);
-    border-radius: 5px;
+    border: 2px solid var(--very_light_grayish_cyan);
+}
+.radioBtns .per6:hover {
+    border: 2px solid var(--strong_cyan);
+    color: var(--very_dark_cyan);
+}
+.radioBtns .per6:focus {
+    border: 2px solid var(--strong_cyan);
+    text-align: end;
+    padding-right: 5px;
+}
+.radioBtns .radioLabel:not(.per6):hover,
+.radioBtns input[name="tips"]:checked + .radioLabel:not(.per6) {
+    background-color: var(--strong_cyan);
+    color: var(--very_dark_cyan);
 }
 
 
@@ -172,6 +219,10 @@ h1 {
     border: none;
     border-radius: 5px;
     font-size: 16px;
+}
+.resetBtn:hover {
+    opacity: 1;
+    cursor: pointer;
 }
 
 /* --------------- mobile -------------- */
