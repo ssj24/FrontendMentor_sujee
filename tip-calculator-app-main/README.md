@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [github](https://github.com/ssj24/frontendMentor_sujee/tree/master/tip-calculator-app-main)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [netlify](https://guileless-puffpuff-50577c.netlify.app/)
 
 ## My process
 
