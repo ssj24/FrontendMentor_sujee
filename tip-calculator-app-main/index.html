@@ -26,7 +26,43 @@
     </div>
     <div class="tipSection">
       <p class="subtitles">Select Tip %</p>
-      <div class="radioBtns"></div>
+      <div class="radioBtns">
+        <input type="radio" name="tips" id="per5" value=5 checked>
+        <label for="per5" class="radioLabel per5">
+            <div class="radioBtn">
+            <p>5%</p>
+            </div>
+        </label>
+        <input type="radio" name="tips" id="per10" value=10>
+        <label for="per10" class="radioLabel per10">
+            <div class="radioBtn">
+            <p>10%</p>
+            </div>
+        </label>
+        <input type="radio" name="tips" id="per15" value=15>
+        <label for="per15" class="radioLabel per15">
+            <div class="radioBtn">
+            <p>15%</p>
+            </div>
+        </label>
+        <input type="radio" name="tips" id="per25" value=25>
+        <label for="per25" class="radioLabel per25">
+            <div class="radioBtn">
+            <p>25%</p>
+            </div>
+        </label>
+        <input type="radio" name="tips" id="per50" value=50>
+        <label for="per50" class="radioLabel per50">
+            <div class="radioBtn">
+            <p>50%</p>
+            </div>
+        </label>
+        <input type="number" name="customTips" id="customTips" class="radioLabel perCustom" 
+          value=""
+          placeholder = "Custom"
+          onfocus="this.placeholder=''"
+          onblur="this.placeholder='Custom'">
+      </div>
     </div>
     <div class="inputSection">
       <p class="subtitles">
@@ -43,11 +79,11 @@
     <div class="main">
       <div class="numContainer">
         <p>Tip Amount<span>/ person</span></p>
-        <p class="calculatorNum">$<span class="tip">0.00</span></p>
+        <p class="calculatorNum">$<span class="tip">5.00</span></p>
       </div>
       <div class="numContainer">
         <p>Total<span>/ person</span></p>
-        <p class="calculatorNum">$<span class="total">0.00</span></p>
+        <p class="calculatorNum">$<span class="total">105.00</span></p>
       </div>
     </div>
     <button class="resetBtn">RESET</button>
@@ -55,7 +91,7 @@
 </form>
 <div class="attribution">
   Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-  Coded by <a href="#">Your Name Here</a>.
+  Coded by <a href="https://github.com/ssj24/frontendMentor_sujee/tree/master/tip-calculator-app-main" target="_blank">Sujee Cho</a>.
 </div>
 <script src="script.js"></script>
 </body>

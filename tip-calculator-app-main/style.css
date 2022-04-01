@@ -22,7 +22,6 @@
 
 html {
     box-sizing: border-box;
-    font-size: 18px;
 }
 
 
@@ -53,14 +52,14 @@ input[type="radio"] {
 }
 
 h1 {
-    width: 90px;
+    width: 100px;
     height: 50px;
     margin: 100px auto;
     overflow-wrap: break-word;
     font-size: 24px;
     text-align: center;
     color: var(--dark_grayish_cyan);
-    letter-spacing: 6px;
+    letter-spacing: 8px;
 }
 
 .container {
@@ -70,7 +69,7 @@ h1 {
     display: flex;
     padding: 30px;
     background-color: var(--white);
-    border-radius: 20px;
+    border-radius: 30px;
 }
 
 /* --------------- left section ------------- */
@@ -120,6 +119,7 @@ h1 {
 }
 .numInput:focus {
     border: 2px solid var(--strong_cyan);
+    color: var(--dark_grayish_cyan);
 }
 .numInput:invalid {
     border: 2px solid red;
@@ -134,7 +134,6 @@ h1 {
 .radioBtns {
     display: inline-flex;
     flex-wrap: wrap;
-    
 }
 .radioBtns .radioLabel {
     width: 30%;
@@ -146,24 +145,24 @@ h1 {
     border-radius: 5px;
     cursor: pointer;
 }
-.radioBtns .per6 {
+.radioBtns .perCustom {
     background-color: var(--very_light_grayish_cyan);
     color: var(--dark_grayish_cyan);
     font-family: 'Space Mono', monospace;
     font-size: 24px;
     border: 2px solid var(--very_light_grayish_cyan);
 }
-.radioBtns .per6:hover {
+.radioBtns .perCustom:hover {
     border: 2px solid var(--strong_cyan);
     color: var(--very_dark_cyan);
 }
-.radioBtns .per6:focus {
+.radioBtns .perCustom:focus {
     border: 2px solid var(--strong_cyan);
     text-align: end;
     padding-right: 5px;
 }
-.radioBtns .radioLabel:not(.per6):hover,
-.radioBtns input[name="tips"]:checked + .radioLabel:not(.per6) {
+.radioBtns .radioLabel:not(.perCustom):hover,
+.radioBtns input[name="tips"]:checked + .radioLabel:not(.perCustom) {
     background-color: var(--strong_cyan);
     color: var(--very_dark_cyan);
 }
@@ -185,7 +184,6 @@ h1 {
 }
 .main {
     width: 90%;
-    /* border: 1px solid red; */
 }
 .numContainer {
     display: flex;
@@ -218,7 +216,7 @@ h1 {
     opacity: 0.2;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px;
 }
 .resetBtn:hover {
     opacity: 1;
@@ -231,6 +229,45 @@ h1 {
     body {
         font-size: 16px;
     }
+    h1 {
+        margin: 50px auto;
+    }
+    .container {
+        width: 375px;
+        height: 830px;
+        padding: 10px;
+        flex-direction: column;
+    }
+    .options {
+        flex: auto;
+    }
+    .inputSection {
+        width: 100%;
+    }
+    .inputSection label {
+        top: 40px;
+    }
+    .tipSection {
+        width: 100%;
+    }
+    .radioBtns {
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    .radioBtns .radioLabel {
+        width: 45%;
+        font-size: 24px;
+    }
+    .calculator {
+        width: 95%;
+        height: auto;
+        margin: auto;
+        padding: 50px 5px;
+    }
+    .numContainer .calculatorNum {
+        font-size: 32px;
+    }
+
 }
 
 /* --------------- attribution --------------- */
