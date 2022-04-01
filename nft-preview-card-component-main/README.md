@@ -25,6 +25,8 @@ Users should be able to:
 
 https://github.com/ssj24/frontendMentor_sujee/tree/master/nft-preview-card-component-main
 
+https://voluble-praline-b15f31.netlify.app/
+
 ## My process
 
 ### Built with
