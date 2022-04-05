@@ -18,8 +18,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [github](https://github.com/ssj24/frontendMentor_sujee/tree/master/time-tracking-dashboard-main)
+- Live Site URL: [netlify](https://famous-strudel-767284.netlify.app/)
 
 ## My process
 
