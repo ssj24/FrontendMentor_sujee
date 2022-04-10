@@ -1,9 +1,5 @@
 # Frontend Mentor - FAQ accordion card solution
 
-## Table of contents
-
-[toc]
-
 ## Overview
 
 ### The challenge
