@@ -1,4 +1,4 @@
-const dashboards = document.querySelector('.container');
+const dashboards = document.querySelector('.dashboards');
 let jsonData = [];
 
 const displayData = async () => {
