@@ -1,0 +1,147 @@
+// sass --watch style.scss style.css
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+$themes: (
+  light: (
+    bg: hsl(236, 33%, 92%),
+    primary: hsl(0, 0%, 98%),
+    lightGray: hsl(233, 11%, 84%),
+    darkGray: hsl(236, 9%, 61%),
+    accent: hsl(235, 19%, 35%)
+  ),
+  dark: (
+    bg: hsl(235, 21%, 11%),
+    primary: hsl(235, 24%, 19%),
+    txtColor: hsl(234, 39%, 85%),
+    txtColorHover: hsl(236, 33%, 92%),
+    lightGray: hsl(234, 11%, 52%),
+    darkGray: hsl(233, 14%, 35%),
+    darkGrayHover: hsl(237, 14%, 26%)
+  )
+);
+$brightBlue: hsl(220, 98%, 61%);
+$checkBackground: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+$lineHeight: 60px;
+
+@mixin flex($col: '') {
+  @if ($col) {
+    flex-direction: $col;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@function getValue($key1, $key2, $key3) {
+  @return map-get(map-get($key1, $key2), $key3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    border-radius: 20px;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+  // width: 1440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: map-get(map-get($themes, light), bg);
+  background-image: url('./images/bg-desktop-light.jpg');
+  background-size: 100% 300px;
+  background-repeat: no-repeat;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 600px;
+  height: 800px;
+  @include flex(column);
+  border: 1px solid $brightBlue;
+  h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: start;
+  }
+  .addContainer {
+    width: 100%;
+    height: $lineHeight;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: map-get(map-get($themes, light), primary);
+    border-radius: 10px;
+    .checked {
+      margin-left: 20px;
+    }
+  }
+  .listContainer {
+    width: 100%;
+    background-color: map-get(map-get($themes, light), primary);
+    border-radius: 10px;
+    .listItem {
+      padding: 0 20px;
+      height: $lineHeight;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid map-get(map-get($themes, light), lightGray);
+      position: relative;
+      button {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        border: none;
+        background-color: transparent;
+        font-size: 20px;
+      }
+    }
+    footer {
+      padding: 0 20px;
+      height: $lineHeight;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .midFooter {
+        @include flex;
+      }
+    }
+  }
+  .checked{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid map-get(map-get($themes, light), lightGray);
+    margin-right: 10px;
+    background: $checkBackground;
+    @include flex(column);
+    &.active {
+      background: transparent;
+      img {
+        display: none;
+      }
+    }
+    &:hover {
+      border-color: getValue($themes, light, darkGray);
+    }
+  }
+
+  
+}
