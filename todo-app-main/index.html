@@ -10,8 +10,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Todo</h1>
+  <div class="container" id="container">
+    <h1>
+      Todo
+      <div  id="theme" class="theme">
+        <img src="./images/icon-moon.svg" alt="light theme">
+      </div>
+    </h1>
     <div class="addContainer">
       <div class="checked active">
         <img src="./images/icon-check.svg" alt="" />
@@ -47,9 +52,12 @@
       <footer>
         <div class="leftFoot">5 items left</div>
         <div class="midFoot">
-          <span class="allCate">All</span>
-          <span class="activeCate">Active</span>
-          <span class="compCate">Completed</span>
+          <input type="radio" name="category" id="allCate" class="cate allCate" value="All" checked>
+          <label for="allCate">All</label>
+          <input type="radio" name="category" id="activeCate" class="cate activeCate" value="Active">
+          <label for="activeCate">Active</label>
+          <input type="radio" name="category" id="compCate" class="cate compCate" value="Completed">
+          <label for="compCate">Completed</label>
         </div>
         <div class="rightFoot">Clear Completed</div>
       </footer>
@@ -58,7 +66,7 @@
   </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/ssj24/frontendMentor_sujee/tree/master/todo-app-main" target="_blank">Sujee Cho</a>.
   </div>
   <script src="script.js"></script>
 </body>

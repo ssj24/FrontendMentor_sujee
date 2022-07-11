@@ -63,23 +63,44 @@ body {
   background-size: 100% 300px;
   background-repeat: no-repeat;
 }
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
 ul {
   list-style: none;
+}
+input[type="radio"] {
+  left: -999em;
+  position: absolute;
+}
+
+input[type="radio"]:checked+label{
+  color: $brightBlue;
 }
 
 .container {
   width: 600px;
   height: 800px;
   @include flex(column);
-  border: 1px solid $brightBlue;
+  // border: 1px solid $brightBlue;
   h1 {
+    position: relative;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
     width: 100%;
     text-align: start;
+    color: getValue($themes, light, bg);
+  }
+  .theme {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
   }
   .addContainer {
     width: 100%;
@@ -118,9 +139,20 @@ ul {
       height: $lineHeight;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      .midFooter {
-        @include flex;
+      justify-content: center;
+      position: relative;
+      .leftFoot {
+        position: absolute;
+        left: 20px;
+      }
+      .rightFoot {
+        position: absolute;
+        right: 20px;
+      }
+      .midFoot {
+        label {
+          cursor: pointer;
+        }
       }
     }
   }
@@ -144,4 +176,8 @@ ul {
   }
 
   
+}
+
+.attribution {
+  margin-top: 20px;
 }
