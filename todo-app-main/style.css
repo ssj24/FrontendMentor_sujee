@@ -5,7 +5,6 @@
 }
 *::before, *::after {
   box-sizing: inherit;
-  border-radius: 20px;
 }
 
 html {
@@ -15,8 +14,8 @@ html {
 body {
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
-  display: flex;
   flex-direction: column;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: hsl(236deg, 33%, 92%);
@@ -44,20 +43,23 @@ input[type=radio] {
 }
 
 .container {
+  margin: auto;
   width: 600px;
   height: 800px;
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-content: start;
   color: hsl(236deg, 9%, 61%);
+  position: relative;
 }
 .container h1 {
   position: relative;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 20px;
-  margin-bottom: 50px;
+  margin: 80px 0 70px 0;
   width: 100%;
   text-align: start;
   color: hsl(236deg, 33%, 92%);
@@ -84,70 +86,116 @@ input[type=radio] {
 }
 .container .addContainer .checked {
   margin-left: 20px;
+  cursor: default;
+}
+.container .addContainer .checked:hover {
+  background: none;
+}
+.container .addContainer input {
+  width: 85%;
+  font-size: 20px;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  color: hsl(235deg, 19%, 35%);
+}
+.container .addContainer input:focus {
+  border-bottom: 1px solid hsl(236deg, 9%, 61%);
 }
 .container .listContainer {
   width: 100%;
+  height: 400px;
+  overflow: auto;
   color: hsl(235deg, 19%, 35%);
   background-color: hsl(0deg, 0%, 98%);
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
   font-weight: 400;
   margin-bottom: 30px;
+  position: relative;
+  box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
 }
 .container .listContainer .listItem {
   padding: 0 20px;
-  height: 60px;
+  min-height: 60px;
+  height: auto;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid hsl(233deg, 11%, 84%);
   position: relative;
   cursor: pointer;
 }
+.container .listContainer .listItem .leftList {
+  width: 95%;
+  display: flex;
+  align-items: center;
+}
+.container .listContainer .listItem .complete + p {
+  color: hsl(236deg, 9%, 61%);
+  text-decoration: line-through;
+}
+.container .listContainer .listItem p {
+  width: 95%;
+  overflow-wrap: break-word;
+  padding: 10px 0;
+}
 .container .listContainer .listItem button {
-  position: absolute;
-  right: 20px;
-  top: 15px;
   border: none;
   background-color: transparent;
   font-size: 20px;
   color: hsl(236deg, 9%, 61%);
+  display: none;
 }
 .container .listContainer .listItem button:hover {
   cursor: pointer;
   color: hsl(235deg, 19%, 35%);
 }
-.container .listContainer footer {
-  padding: 0 20px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  color: hsl(233deg, 11%, 84%);
+.container .listContainer .listItem:hover button {
+  display: block;
 }
-.container .listContainer footer .leftFoot {
+.container footer {
+  padding: 0 20px;
+  width: 93.5%;
+  height: 60px;
+  position: absolute;
+  left: 0;
+  bottom: 75px;
+  border-radius: 0 0 10px 10px;
+  background-color: hsl(0deg, 0%, 98%);
+  border-top: 1px solid hsl(236deg, 9%, 61%);
+  flex-direction: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(236deg, 9%, 61%);
+}
+.container footer .leftFoot {
   position: absolute;
   left: 20px;
 }
-.container .listContainer footer .leftFoot:hover {
-  cursor: pointer;
-  color: hsl(235deg, 19%, 35%);
-}
-.container .listContainer footer .rightFoot {
+.container footer .rightFoot {
   position: absolute;
   right: 20px;
 }
-.container .listContainer footer .rightFoot:hover {
+.container footer .rightFoot:hover {
   cursor: pointer;
   color: hsl(235deg, 19%, 35%);
 }
-.container .listContainer footer .midFoot label {
+.container .midFoot {
+  position: absolute;
+  bottom: 95px;
+  z-index: 1000;
+}
+.container .midFoot label {
+  margin: 0 5px;
   font-weight: 700;
   cursor: pointer;
+  color: hsl(233deg, 11%, 84%);
 }
-.container .listContainer footer .midFoot label:hover {
+.container .midFoot label:hover {
   color: hsl(235deg, 19%, 35%);
 }
-.container .listContainer footer .midFoot input[type=radio]:checked + label {
+.container .midFoot input[type=radio]:checked + label {
   color: hsl(220deg, 98%, 61%);
 }
 .container .checked {
@@ -156,23 +204,20 @@ input[type=radio] {
   border-radius: 50%;
   border: 1px solid hsl(233deg, 11%, 84%);
   margin-right: 10px;
-  background: linear-gradient(hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
+  background: transparent;
   flex-direction: "";
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
-.container .checked.active {
-  background: transparent;
-}
-.container .checked.active img {
+.container .checked img {
   display: none;
 }
-.container .checked.active:hover {
+.container .checked:hover {
   background: linear-gradient(hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
 }
-.container .checked.active:hover .innerCheck {
+.container .checked:hover .innerCheck {
   position: absolute;
   top: 1px;
   left: 1px;
@@ -181,11 +226,26 @@ input[type=radio] {
   height: 16px;
   background-color: hsl(0deg, 0%, 98%);
 }
+.container .checked.complete {
+  background: linear-gradient(hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
+}
+.container .checked.complete img {
+  display: block;
+}
+.container .checked.complete .innerCheck {
+  display: none;
+}
+
 .dark .container {
   color: hsl(234deg, 11%, 52%);
 }
 .dark .container .addContainer {
   background-color: hsl(235deg, 24%, 19%);
+}
+.dark .container .addContainer .checked:hover {
+  border-color: inherit;
+}
+.dark .container .addContainer input {
   color: hsl(236deg, 33%, 92%);
 }
 .dark .container .listContainer {
@@ -195,26 +255,35 @@ input[type=radio] {
   color: hsl(236deg, 33%, 92%);
   border-color: hsl(233deg, 14%, 35%);
 }
+.dark .container .listContainer .listItem .delBtn:hover {
+  color: hsl(236deg, 33%, 92%);
+}
 .dark .container .checked {
   border-color: hsl(233deg, 14%, 35%);
 }
 .dark .container .checked:hover {
   border-color: hsl(234deg, 11%, 52%);
 }
-.dark .container .checked.active:hover .innerCheck {
+.dark .container .checked:hover .innerCheck {
   background-color: hsl(235deg, 24%, 19%);
 }
 .dark .container footer {
+  background-color: hsl(235deg, 24%, 19%);
   color: hsl(234deg, 11%, 52%);
 }
 .dark .container footer .leftFoot:hover {
   color: hsl(236deg, 33%, 92%);
 }
-.dark .container footer .midFoot label:hover {
-  color: hsl(236deg, 33%, 92%);
-}
 .dark .container footer .rightFoot:hover {
   color: hsl(236deg, 33%, 92%);
+}
+.dark .container .midFoot label:hover {
+  color: hsl(236deg, 33%, 92%);
+}
+
+.noti {
+  position: relative;
+  bottom: -70px;
 }
 
 .attribution {
@@ -231,6 +300,73 @@ input[type=radio] {
 .dark .attribution a {
   color: hsl(234deg, 39%, 85%);
   background-color: blueviolet;
+}
+
+@media (max-width: 375px) {
+  body {
+    font-size: 15px;
+    height: 100vh;
+    background-size: 100% 30%;
+  }
+  .container {
+    margin: 0 auto;
+    width: 335px;
+    height: 600px;
+  }
+  .container h1 {
+    margin: 20px 0 30px 0;
+  }
+  .container .addContainer {
+    height: 30px;
+    padding: 10px 0;
+  }
+  .container .addContainer input {
+    width: 80%;
+    font-size: 15px;
+  }
+  .container .listContainer {
+    height: 300px;
+  }
+  .container .listContainer .listItem {
+    padding: 10px 20px;
+    min-height: 30px;
+  }
+  .container .listContainer .listItem p {
+    width: 85%;
+  }
+  .container footer {
+    width: 88%;
+    bottom: 100px;
+    height: 50px;
+  }
+  .container .midFoot {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    flex-direction: "";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 25px;
+    background-color: hsl(0deg, 0%, 98%);
+  }
+  .container .midFoot label {
+    margin: 0 10px;
+  }
+  .container .noti {
+    position: relative;
+    bottom: -120px;
+  }
+  .dark .container footer {
+    background-color: hsl(235deg, 24%, 19%);
+  }
+  .dark .container .midFoot {
+    background-color: hsl(235deg, 24%, 19%);
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+  }
+  .attribution {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

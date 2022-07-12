@@ -42,7 +42,6 @@ $lineHeight: 60px;
   &::before,
   &::after {
     box-sizing: inherit;
-    border-radius: 20px;
   }
 }
 
@@ -53,11 +52,7 @@ html {
 body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 18px;
-  // width: 1440px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex(column);
   background-color: getValue($themes, light, bg);
   background-image: url('./images/bg-desktop-light.jpg');
   background-size: 100% 300px;
@@ -80,16 +75,19 @@ input[type="radio"] {
 }
 
 .container {
+  margin: auto;
   width: 600px;
   height: 800px;
   @include flex(column);
+  justify-content: start;
   color: getValue($themes, light, darkGray);
+  position: relative;
   h1 {
     position: relative;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 20px;
-    margin-bottom: 50px;
+    margin: 80px 0 70px 0;
     width: 100%;
     text-align: start;
     color: getValue($themes, light, bg);
@@ -115,73 +113,114 @@ input[type="radio"] {
     cursor: pointer;
     .checked {
       margin-left: 20px;
+      cursor:default;
+      &:hover {
+        background: none;
+      }
+    }
+    input {
+      width: 85%;
+      font-size: 20px;
+      background-color: inherit;
+      border: none;
+      outline: none;
+      color: getValue($themes, light, accent);
+      &:focus {
+        border-bottom: 1px solid getValue($themes, light, darkGray);
+      }
     }
   }
   .listContainer {
     width: 100%;
+    height: 400px;
+    overflow: auto;
     color: getValue($themes, light, accent);
     background-color: getValue($themes, light, primary);
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     font-weight: 400;
     margin-bottom: 30px;
+    position: relative;
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
     .listItem {
       padding: 0 20px;
-      height: $lineHeight;
+      min-height: $lineHeight;
+      height: auto;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       border-bottom: 1px solid getValue($themes, light, lightGray);
       position: relative;
       cursor: pointer;
+      .leftList {
+        width: 95%;
+        display: flex;
+        align-items: center;
+      }
+      .complete + p {
+        color: getValue($themes, light, darkGray);
+        text-decoration: line-through;
+      }
+      p {
+        width: 95%;
+        overflow-wrap: break-word;
+        padding: 10px 0;
+      }
       button {
-        position: absolute;
-        right: 20px;
-        top: 15px;
         border: none;
         background-color: transparent;
         font-size: 20px;
         color: getValue($themes, light, darkGray);
+        display: none;
         &:hover {
           cursor: pointer;
           color: getValue($themes, light, accent);
         }
+      }
+      &:hover button {
+        display: block;
       }
     }
-    footer {
-      padding: 0 20px;
-      height: $lineHeight;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
+  }
+  footer {
+    padding: 0 20px;
+    width: 93.5%;
+    height: $lineHeight;
+    position: absolute;
+    left: 0;
+    bottom: 75px;
+    border-radius: 0 0 10px 10px;
+    background-color: getValue($themes, light, primary);
+    border-top: 1px solid getValue($themes, light, darkGray);
+    @include flex();
+    color: getValue($themes, light, darkGray);
+    .leftFoot {
+      position: absolute;
+      left: 20px;
+    }
+    .rightFoot {
+      position: absolute;
+      right: 20px;
+      &:hover {
+        cursor: pointer;
+        color: getValue($themes, light, accent);
+      }
+    }
+  }
+  .midFoot {
+    position: absolute;
+    bottom: 95px;
+    z-index: 1000;
+    label {
+      margin: 0 5px;
+      font-weight: 700;
+      cursor: pointer;
       color: getValue($themes, light, lightGray);
-      .leftFoot {
-        position: absolute;
-        left: 20px;
-        &:hover {
-          cursor: pointer;
-          color: getValue($themes, light, accent);
-        }
+      &:hover {
+        color: getValue($themes, light, accent);
       }
-      .rightFoot {
-        position: absolute;
-        right: 20px;
-        &:hover {
-          cursor: pointer;
-          color: getValue($themes, light, accent);
-        }
-      }
-      .midFoot {
-        label {
-          font-weight: 700;
-          cursor: pointer;
-          &:hover {
-            color: getValue($themes, light, accent);
-          }
-        }
-        input[type="radio"]:checked+label{
-          color: $brightBlue;
-        }
-      }
+    }
+    input[type="radio"]:checked+label{
+      color: $brightBlue;
     }
   }
   .checked{
@@ -190,28 +229,32 @@ input[type="radio"] {
     border-radius: 50%;
     border: 1px solid getValue($themes, light, lightGray);
     margin-right: 10px;
-    background: $checkBackground;
+    background: transparent;
     @include flex();
     position: relative;
-    &.active {
-      background: transparent;
-      img {
-        display: none;
-      }
-      &:hover {
-        background: $checkBackground;
-        .innerCheck {
-          position: absolute;
-          top: 1px;
-          left: 1px;
-          border-radius: 50%;
-          width: 16px;
-          height: 16px;
-          background-color: getValue($themes, light, primary);
-        }
-      }
+    img {
+      display: none;
     }
     &:hover {
+      background: $checkBackground;
+      .innerCheck {
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        background-color: getValue($themes, light, primary);
+      }
+    }
+    &.complete {
+      background: $checkBackground;
+      img {
+        display: block;
+      }
+      .innerCheck {
+        display: none;
+      }
     }
   }
 }
@@ -220,7 +263,12 @@ input[type="radio"] {
   color: getValue($themes, dark, lightGray);
   .addContainer {
     background-color: getValue($themes, dark, primary);
-    color: getValue($themes, dark, txtColorHover);
+    .checked:hover {
+      border-color: inherit;
+    }
+    input {
+     color: getValue($themes, dark, txtColorHover);
+    }
   }
   .listContainer {
     background-color: getValue($themes, dark, primary);
@@ -228,6 +276,9 @@ input[type="radio"] {
     .listItem {
       color: getValue($themes, dark, txtColorHover);
       border-color: getValue($themes, dark, darkGray);
+      .delBtn:hover {
+        color: getValue($themes, dark, txtColorHover);
+      }
     }
   }
   .checked {
@@ -235,18 +286,14 @@ input[type="radio"] {
     &:hover {
       border-color: getValue($themes, dark, lightGray);
     }
-    &.active:hover .innerCheck {
+    &:hover .innerCheck {
       background-color: getValue($themes, dark, primary);
     }
   }
   footer {
+    background-color: getValue($themes, dark, primary);
     color: getValue($themes, dark, lightGray);
     .leftFoot {
-      &:hover {
-        color: getValue($themes, dark, txtColorHover);
-      }
-    }
-    .midFoot label {
       &:hover {
         color: getValue($themes, dark, txtColorHover);
       }
@@ -257,8 +304,16 @@ input[type="radio"] {
       }
     }
   }
+  .midFoot label {
+    &:hover {
+      color: getValue($themes, dark, txtColorHover);
+    }
+  }
 }
-
+.noti {
+  position: relative;
+  bottom: -70px;
+}
 .attribution {
   margin-top: 20px;
   color: getValue($themes, light, darkGray);
@@ -271,5 +326,71 @@ input[type="radio"] {
   a {
     color: getValue($themes, dark, txtColor);
     background-color: blueviolet;
+  }
+}
+
+@media (max-width: 375px) {
+  body {
+    font-size: 15px;
+    height: 100vh;
+    background-size: 100% 30%;
+  }
+  .container {
+    margin: 0 auto;
+    width: 335px;
+    height: 600px;
+    h1 {
+      margin: 20px 0 30px 0;
+    }
+    .addContainer {
+      height: 30px;
+      padding: 10px 0;
+      input {
+        width: 80%;
+        font-size: 15px;
+      }
+    } 
+    .listContainer {
+      height: 300px;
+      .listItem {
+        padding: 10px 20px;
+        min-height: 30px;
+        p {
+          width: 85%;
+        }
+      }
+    }
+    footer {
+      width: 88%;
+      bottom: 100px;
+      height: 50px;
+    }     
+    .midFoot {
+      width: 100%;
+      height: 50px;
+      border-radius: 10px;
+      @include flex();
+      bottom: 25px;
+      background-color: getValue($themes, light, primary);
+      label {
+        margin: 0 10px;
+      }
+    }
+    .noti {
+      position: relative;
+      bottom: -120px;
+    }
+  }
+  .dark .container {
+    footer {
+      background-color: getValue($themes, dark, primary);
+    }
+    .midFoot {
+      background-color: getValue($themes, dark, primary);
+      box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+    }
+  }
+  .attribution {
+    display: none;
   }
 }
