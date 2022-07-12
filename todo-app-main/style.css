@@ -24,6 +24,10 @@ body {
   background-size: 100% 300px;
   background-repeat: no-repeat;
 }
+body.dark {
+  background-color: hsl(235deg, 21%, 11%);
+  background-image: url("./images/bg-desktop-dark.jpg");
+}
 
 a {
   text-decoration: none;
@@ -39,10 +43,6 @@ input[type=radio] {
   position: absolute;
 }
 
-input[type=radio]:checked + label {
-  color: hsl(220deg, 98%, 61%);
-}
-
 .container {
   width: 600px;
   height: 800px;
@@ -50,6 +50,7 @@ input[type=radio]:checked + label {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: hsl(236deg, 9%, 61%);
 }
 .container h1 {
   position: relative;
@@ -77,14 +78,20 @@ input[type=radio]:checked + label {
   margin-bottom: 20px;
   background-color: hsl(0deg, 0%, 98%);
   border-radius: 10px;
+  font-weight: 400;
+  color: hsl(235deg, 19%, 35%);
+  cursor: pointer;
 }
 .container .addContainer .checked {
   margin-left: 20px;
 }
 .container .listContainer {
   width: 100%;
+  color: hsl(235deg, 19%, 35%);
   background-color: hsl(0deg, 0%, 98%);
   border-radius: 10px;
+  font-weight: 400;
+  margin-bottom: 30px;
 }
 .container .listContainer .listItem {
   padding: 0 20px;
@@ -93,6 +100,7 @@ input[type=radio]:checked + label {
   align-items: center;
   border-bottom: 1px solid hsl(233deg, 11%, 84%);
   position: relative;
+  cursor: pointer;
 }
 .container .listContainer .listItem button {
   position: absolute;
@@ -101,6 +109,11 @@ input[type=radio]:checked + label {
   border: none;
   background-color: transparent;
   font-size: 20px;
+  color: hsl(236deg, 9%, 61%);
+}
+.container .listContainer .listItem button:hover {
+  cursor: pointer;
+  color: hsl(235deg, 19%, 35%);
 }
 .container .listContainer footer {
   padding: 0 20px;
@@ -109,17 +122,33 @@ input[type=radio]:checked + label {
   align-items: center;
   justify-content: center;
   position: relative;
+  color: hsl(233deg, 11%, 84%);
 }
 .container .listContainer footer .leftFoot {
   position: absolute;
   left: 20px;
 }
+.container .listContainer footer .leftFoot:hover {
+  cursor: pointer;
+  color: hsl(235deg, 19%, 35%);
+}
 .container .listContainer footer .rightFoot {
   position: absolute;
   right: 20px;
 }
-.container .listContainer footer .midFoot label {
+.container .listContainer footer .rightFoot:hover {
   cursor: pointer;
+  color: hsl(235deg, 19%, 35%);
+}
+.container .listContainer footer .midFoot label {
+  font-weight: 700;
+  cursor: pointer;
+}
+.container .listContainer footer .midFoot label:hover {
+  color: hsl(235deg, 19%, 35%);
+}
+.container .listContainer footer .midFoot input[type=radio]:checked + label {
+  color: hsl(220deg, 98%, 61%);
 }
 .container .checked {
   width: 18px;
@@ -128,10 +157,11 @@ input[type=radio]:checked + label {
   border: 1px solid hsl(233deg, 11%, 84%);
   margin-right: 10px;
   background: linear-gradient(hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
-  flex-direction: column;
+  flex-direction: "";
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .container .checked.active {
   background: transparent;
@@ -139,12 +169,68 @@ input[type=radio]:checked + label {
 .container .checked.active img {
   display: none;
 }
-.container .checked:hover {
-  border-color: hsl(236deg, 9%, 61%);
+.container .checked.active:hover {
+  background: linear-gradient(hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
+}
+.container .checked.active:hover .innerCheck {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: hsl(0deg, 0%, 98%);
+}
+.dark .container {
+  color: hsl(234deg, 11%, 52%);
+}
+.dark .container .addContainer {
+  background-color: hsl(235deg, 24%, 19%);
+  color: hsl(236deg, 33%, 92%);
+}
+.dark .container .listContainer {
+  background-color: hsl(235deg, 24%, 19%);
+}
+.dark .container .listContainer .listItem {
+  color: hsl(236deg, 33%, 92%);
+  border-color: hsl(233deg, 14%, 35%);
+}
+.dark .container .checked {
+  border-color: hsl(233deg, 14%, 35%);
+}
+.dark .container .checked:hover {
+  border-color: hsl(234deg, 11%, 52%);
+}
+.dark .container .checked.active:hover .innerCheck {
+  background-color: hsl(235deg, 24%, 19%);
+}
+.dark .container footer {
+  color: hsl(234deg, 11%, 52%);
+}
+.dark .container footer .leftFoot:hover {
+  color: hsl(236deg, 33%, 92%);
+}
+.dark .container footer .midFoot label:hover {
+  color: hsl(236deg, 33%, 92%);
+}
+.dark .container footer .rightFoot:hover {
+  color: hsl(236deg, 33%, 92%);
 }
 
 .attribution {
   margin-top: 20px;
+  color: hsl(236deg, 9%, 61%);
+}
+.attribution a {
+  background-color: aliceblue;
+}
+
+.dark .attribution {
+  color: hsl(234deg, 11%, 52%);
+}
+.dark .attribution a {
+  color: hsl(234deg, 39%, 85%);
+  background-color: blueviolet;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -58,10 +58,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: map-get(map-get($themes, light), bg);
+  background-color: getValue($themes, light, bg);
   background-image: url('./images/bg-desktop-light.jpg');
   background-size: 100% 300px;
   background-repeat: no-repeat;
+  &.dark {
+    background-color: getValue($themes, dark, bg);
+    background-image: url('./images/bg-desktop-dark.jpg');
+  }
 }
 a {
   text-decoration: none;
@@ -75,15 +79,11 @@ input[type="radio"] {
   position: absolute;
 }
 
-input[type="radio"]:checked+label{
-  color: $brightBlue;
-}
-
 .container {
   width: 600px;
   height: 800px;
   @include flex(column);
-  // border: 1px solid $brightBlue;
+  color: getValue($themes, light, darkGray);
   h1 {
     position: relative;
     font-weight: 700;
@@ -108,23 +108,30 @@ input[type="radio"]:checked+label{
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    background-color: map-get(map-get($themes, light), primary);
+    background-color: getValue($themes, light, primary);
     border-radius: 10px;
+    font-weight: 400;
+    color: getValue($themes, light, accent);
+    cursor: pointer;
     .checked {
       margin-left: 20px;
     }
   }
   .listContainer {
     width: 100%;
-    background-color: map-get(map-get($themes, light), primary);
+    color: getValue($themes, light, accent);
+    background-color: getValue($themes, light, primary);
     border-radius: 10px;
+    font-weight: 400;
+    margin-bottom: 30px;
     .listItem {
       padding: 0 20px;
       height: $lineHeight;
       display: flex;
       align-items: center;
-      border-bottom: 1px solid map-get(map-get($themes, light), lightGray);
+      border-bottom: 1px solid getValue($themes, light, lightGray);
       position: relative;
+      cursor: pointer;
       button {
         position: absolute;
         right: 20px;
@@ -132,6 +139,11 @@ input[type="radio"]:checked+label{
         border: none;
         background-color: transparent;
         font-size: 20px;
+        color: getValue($themes, light, darkGray);
+        &:hover {
+          cursor: pointer;
+          color: getValue($themes, light, accent);
+        }
       }
     }
     footer {
@@ -141,17 +153,33 @@ input[type="radio"]:checked+label{
       align-items: center;
       justify-content: center;
       position: relative;
+      color: getValue($themes, light, lightGray);
       .leftFoot {
         position: absolute;
         left: 20px;
+        &:hover {
+          cursor: pointer;
+          color: getValue($themes, light, accent);
+        }
       }
       .rightFoot {
         position: absolute;
         right: 20px;
+        &:hover {
+          cursor: pointer;
+          color: getValue($themes, light, accent);
+        }
       }
       .midFoot {
         label {
+          font-weight: 700;
           cursor: pointer;
+          &:hover {
+            color: getValue($themes, light, accent);
+          }
+        }
+        input[type="radio"]:checked+label{
+          color: $brightBlue;
         }
       }
     }
@@ -160,24 +188,88 @@ input[type="radio"]:checked+label{
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    border: 1px solid map-get(map-get($themes, light), lightGray);
+    border: 1px solid getValue($themes, light, lightGray);
     margin-right: 10px;
     background: $checkBackground;
-    @include flex(column);
+    @include flex();
+    position: relative;
     &.active {
       background: transparent;
       img {
         display: none;
       }
+      &:hover {
+        background: $checkBackground;
+        .innerCheck {
+          position: absolute;
+          top: 1px;
+          left: 1px;
+          border-radius: 50%;
+          width: 16px;
+          height: 16px;
+          background-color: getValue($themes, light, primary);
+        }
+      }
     }
     &:hover {
-      border-color: getValue($themes, light, darkGray);
     }
   }
+}
 
-  
+.dark .container {
+  color: getValue($themes, dark, lightGray);
+  .addContainer {
+    background-color: getValue($themes, dark, primary);
+    color: getValue($themes, dark, txtColorHover);
+  }
+  .listContainer {
+    background-color: getValue($themes, dark, primary);
+    // color: getValue($themes, dark, txtColor);
+    .listItem {
+      color: getValue($themes, dark, txtColorHover);
+      border-color: getValue($themes, dark, darkGray);
+    }
+  }
+  .checked {
+    border-color: getValue($themes, dark, darkGray);
+    &:hover {
+      border-color: getValue($themes, dark, lightGray);
+    }
+    &.active:hover .innerCheck {
+      background-color: getValue($themes, dark, primary);
+    }
+  }
+  footer {
+    color: getValue($themes, dark, lightGray);
+    .leftFoot {
+      &:hover {
+        color: getValue($themes, dark, txtColorHover);
+      }
+    }
+    .midFoot label {
+      &:hover {
+        color: getValue($themes, dark, txtColorHover);
+      }
+    }
+    .rightFoot {
+      &:hover {
+        color: getValue($themes, dark, txtColorHover);
+      }
+    }
+  }
 }
 
 .attribution {
   margin-top: 20px;
+  color: getValue($themes, light, darkGray);
+  a {
+    background-color: aliceblue;
+  }
+}
+.dark .attribution {
+  color: getValue($themes, dark, lightGray);
+  a {
+    color: getValue($themes, dark, txtColor);
+    background-color: blueviolet;
+  }
 }
