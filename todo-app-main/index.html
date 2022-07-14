@@ -10,41 +10,41 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container" id="container">
+  <main class="container" id="container">
     <h1>
       Todo
-      <div  id="theme" class="theme">
+      <aside  id="theme" class="theme">
         <img src="./images/icon-moon.svg" alt="light theme">
-      </div>
+      </aside>
     </h1>
-    <div class="addContainer">
-      <div class="checked">
-        <div class="innerCheck"></div>
+    <section class="addContainer">
+      <section class="checked">
+        <aside class="innerCheck"></aside>
         <img src="./images/icon-check.svg" alt="" />
-      </div>
+      </section>
       <input type="text" name="addTodo" id="addTodo" placeholder="Create a new todo">
-    </div>
-    <div class="listContainer">
-      <div id="lists"></div>
-    </div>
+    </section>
+    <section class="listContainer">
+      <section id="lists"></section>
+    </section>
     <footer>
-      <div class="leftFoot"><span id="leftItem">0</span> items left</div>
-      <div class="rightFoot">Clear Completed</div>
+      <article class="leftFoot"><span id="leftItem">0</span> items left</article>
+      <article class="rightFoot">Clear Completed</article>
     </footer>
-    <div class="midFoot">
+    <section class="midFoot">
       <input type="radio" name="category" id="allCate" class="cate allCate" value="All" checked>
       <label for="allCate">All</label>
       <input type="radio" name="category" id="activeCate" class="cate activeCate" value="Active">
       <label for="activeCate">Active</label>
       <input type="radio" name="category" id="compCate" class="cate compCate" value="Completed">
       <label for="compCate">Completed</label>
-    </div>
+    </section>
     <p class="noti">Drag and drop to reorder list</p>
-  </div>
-  <div class="attribution">
+  </main>
+  <section class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/ssj24/frontendMentor_sujee/tree/master/todo-app-main" target="_blank">Sujee Cho</a>.
-  </div>
+  </section>
   <script src="script.js"></script>
 </body>
 </html>
