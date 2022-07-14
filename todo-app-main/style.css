@@ -64,7 +64,7 @@ input[type=radio] {
   text-align: start;
   color: hsl(236deg, 33%, 92%);
 }
-.container .theme {
+.container #theme {
   position: absolute;
   right: 0;
   top: 0;

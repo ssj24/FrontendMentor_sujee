@@ -92,7 +92,7 @@ input[type="radio"] {
     text-align: start;
     color: getValue($themes, light, bg);
   }
-  .theme {
+  #theme {
     position: absolute;
     right: 0;
     top: 0;
