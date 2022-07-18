@@ -114,7 +114,7 @@ addContainer.addEventListener('click', () => {
   addContainer.children[1].focus();
 })
 addContainer.addEventListener('keydown', (e) => {
-  if(e.code == "Enter") {
+  if(e.keyCode == 13) {
     addTodoList(e.target.value);
     e.target.value = '';
   }
