@@ -1,0 +1,6 @@
+.destWrapper {
+  background-image: url("../images/background-destination-desktop.jpg");
+}
+.destWrapper p {
+  color: var(--font-pri);
+}
