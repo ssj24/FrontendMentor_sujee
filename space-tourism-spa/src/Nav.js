@@ -1,15 +1,27 @@
 import React, { Component } from 'react';
+import './assets/styles/Nav.css';
 
 class Nav extends Component {
+  lists = ["Home", "Destination", "Crew", "Technology"];
+  list = this.lists.map((name, index) =>
+    {if (index === 0) {
+      return <li onClick={(e) => {
+        this.props.navChange(index);
+        this.props.navClicked(e.target);
+      }} className="selected" key={index}><span>{'0'.concat(index)}</span>{name}</li>
+    } else {
+      return <li onClick={(e) => {
+        this.props.navChange(index);
+        this.props.navClicked(e.target);
+      }} key={index}><span>{'0'.concat(index)}</span>{name}</li>
+    }}
+    );
   render() {
     return (
-      <div>
+      <div className="navWrapper">
+        <div className="logo"></div>
         <ul className="mainNav">
-
-          <a href="/"><li>00 Home</li></a>
-          <a href="/dest"><li>01 Destination</li></a>
-          <a href="/crew"><li>02 Crew</li></a>
-          <a href="/tech"><li>03 Technology</li></a>
+          {this.list}
         </ul>
       </div>
     );

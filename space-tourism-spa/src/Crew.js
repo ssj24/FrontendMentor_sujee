@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
-import Nav from './NavCrew.js';
+import Nav from './NavDetail.js';
 import './assets/styles/Crew.css';
 import data from './assets/data.json'
 
 class Crew extends Component {
+  state = {
+    type: "crew",
+    category: "",
+    pic: "",
+    descripation: "",
+    position: "",
+    name: "",
+    crewList: [0, 1, 2, 3]
+  };
+  handleData = (type, idx) => {
+    this.setState({category: data[type][idx]}, () => {
+      this.setState({
+        pic: this.state.category.images.png,
+        description: this.state.category.bio,
+        position: this.state.category.role,
+        name: this.state.category.name
+      })
+    })
+  }
+  componentDidMount() {
+    this.handleData(this.state.type, 0);
+  }
+
   render() {
-    let crew = data.crew[0];
-    let position = crew.role || "Commander";
-    let name = crew.name || "Douglas Hurley";
-    let description = crew.bio || `
-    Douglas Gerald Hurley is an American engineer, former Marine Corps pilot 
-    and former NASA astronaut. He launched into space for the third time as 
-    commander of Crew Dragon Demo-2.`;
-    let pic = crew.images.png;
+    let { position, name, description, pic } = this.state;
     return (
       <div className="wrapper crewWrapper">
         <h2>02 Meet your crew</h2>
@@ -20,7 +36,11 @@ class Crew extends Component {
           <h3>{position}</h3>
           <h1>{name}</h1>
           <p>{description}</p>
-          <Nav />
+          <Nav
+              type={this.state.type}
+              list={this.state.crewList}
+              handleData={this.handleData}
+              navClicked={this.props.navClicked} />
         </section>
         <section className="right">
           <img src={pic} alt={position} />

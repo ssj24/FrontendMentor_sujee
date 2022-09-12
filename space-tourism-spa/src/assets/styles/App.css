@@ -1,4 +1,8 @@
-.App {
+/* .App {
+  width: 100vw;
+  height: 100vh;
+} */
+.App-main {
   width: 100vw;
   height: 100vh;
 }
@@ -8,12 +12,15 @@
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  
 }
-.main {
+.mainWrapper {
   width: 100%;
   display: flex;
   justify-content:space-around;
+}
+
+.mainWrapper section {
+  flex: 1;
 }
 .title, h2 {
   text-transform: uppercase;
@@ -25,13 +32,6 @@
 }
 h2 {
   padding-top: 200px;
-}
-
-section.left {
-  width: 35%;
-}
-section.right {
-  position: relative;
 }
 
 .App-header {

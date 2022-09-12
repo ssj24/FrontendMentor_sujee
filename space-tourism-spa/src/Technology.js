@@ -1,23 +1,41 @@
 import React, { Component } from 'react';
-import Nav from './NavTech.js';
+import Nav from './NavDetail.js';
 import './assets/styles/Tech.css';
 import data from './assets/data.json'
 
 class Technology extends Component {
+  state = {
+    type: "technology",
+    category: "",
+    pic: "",
+    descripation: "",
+    title: "",
+    techList: [0, 1, 2]
+  };
+  handleData = (type, idx) => {
+    this.setState({category: data[type][idx]}, () => {
+      this.setState({
+        pic: this.state.category.images.portrait,
+        description: this.state.category.description,
+        title: this.state.category.name
+      })
+    })
+  }
+  componentDidMount() {
+    this.handleData(this.state.type, 0);
+  }
   render() {
-    let tech = data.technology[0];
-    let title = tech.name || "Launch vehicle";
-    let description = tech.description || `
-      A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a 
-      payload from Earth's surface to space, usually to Earth orbit or beyond. Our 
-      WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, 
-      it's quite an awe-inspiring sight on the launch pad!`;
-    let pic = tech.images.portrait;
+    let { title, description, pic } = this.state;
     return (
       <div className="wrapper techWrapper">
         <h2>03 Space launch 101</h2>
         <section className="left">
-          <Nav />
+          <Nav
+            type={this.state.type}
+            list={this.state.techList}
+            handleData={this.handleData}
+            navClicked={this.props.navClicked} />
+
           <h3>The terminology...</h3>
           <h1>{title}</h1>
           <p>{description}</p>

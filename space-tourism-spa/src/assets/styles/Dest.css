@@ -1,5 +1,8 @@
 .destWrapper {
   background-image: url("../images/background-destination-desktop.jpg");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .destWrapper p {
   color: var(--font-pri);

@@ -1,7 +1,11 @@
 .homeWrapper {
   background-image: url('../images/background-home-desktop.jpg');
 }
-section.right a {
+.homeWrapper .mainWrapper {
+  /* width: 100%; */
+  /* height: 100%; */
+}
+section.right div {
   display: block;
   width: 200px;
   height: 200px;
