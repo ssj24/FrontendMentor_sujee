@@ -13,5 +13,5 @@ This repository has solutions for Frontend Mentor challenges.
 
 1. [static job listings](https://ssj24.github.io/frontendMentor_sujee/static-job-listings-master/)
 2. [countdown timer](https://ssj24.github.io/frontendMentor_sujee/launch-countdown-timer-main/)
-3. [space tourism](https://ssj24.github.io/frontendMentor_sujee/space-tourism/)
+3. [space tourism](https://ssj24.github.io/frontendMentor_sujee/space-tourism-spa/)
 
