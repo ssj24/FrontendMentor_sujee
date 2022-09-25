@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/frontendMentor_sujee/space-tourism-spa/static/css/main.c533232f.css",
-    "main.js": "/frontendMentor_sujee/space-tourism-spa/static/js/main.55f33672.js",
+    "main.js": "/frontendMentor_sujee/space-tourism-spa/static/js/main.81d8aae0.js",
     "static/js/787.e5372b0f.chunk.js": "/frontendMentor_sujee/space-tourism-spa/static/js/787.e5372b0f.chunk.js",
     "static/media/background-home-desktop.jpg": "/frontendMentor_sujee/space-tourism-spa/static/media/background-home-desktop.cdf3864ecbfdf20e8c3b.jpg",
     "static/media/background-destination-desktop.jpg": "/frontendMentor_sujee/space-tourism-spa/static/media/background-destination-desktop.468b922c69bf5499b4bc.jpg",
@@ -10,11 +10,11 @@
     "index.html": "/frontendMentor_sujee/space-tourism-spa/index.html",
     "static/media/logo.svg": "/frontendMentor_sujee/space-tourism-spa/static/media/logo.565f7f2c0534403f11b7.svg",
     "main.c533232f.css.map": "/frontendMentor_sujee/space-tourism-spa/static/css/main.c533232f.css.map",
-    "main.55f33672.js.map": "/frontendMentor_sujee/space-tourism-spa/static/js/main.55f33672.js.map",
+    "main.81d8aae0.js.map": "/frontendMentor_sujee/space-tourism-spa/static/js/main.81d8aae0.js.map",
     "787.e5372b0f.chunk.js.map": "/frontendMentor_sujee/space-tourism-spa/static/js/787.e5372b0f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c533232f.css",
-    "static/js/main.55f33672.js"
+    "static/js/main.81d8aae0.js"
   ]
 }
