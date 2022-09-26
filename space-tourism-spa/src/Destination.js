@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from './NavDetail.js';
 import './assets/styles/Dest.css';
-import data from './assets/data.json'
+import data from './assets/data.json';
 
 class Destination extends Component {
   state = {
@@ -14,7 +14,6 @@ class Destination extends Component {
     time: "",
     dests: ["Moon", "Mars", "Europa", "Titan"]
   };
-
   handleData = (type, idx) => {
     this.setState({category: data[type][idx]}, () => {
       this.setState({
@@ -38,7 +37,7 @@ class Destination extends Component {
         <h2>01 Pick your destination</h2>
         <section className="mainWrapper">
           <section className="left">
-            <img src={pic} alt={title} />
+            <img className="animate__animated animate__bounceInLeft" src={process.env.PUBLIC_URL + pic} alt={title} />
           </section>
           <section className="right">
             <Nav

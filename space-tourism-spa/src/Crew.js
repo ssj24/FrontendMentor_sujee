@@ -43,7 +43,7 @@ class Crew extends Component {
               navClicked={this.props.navClicked} />
         </section>
         <section className="right">
-          <img src={pic} alt={position} />
+          <img data-aos="fade-up" src={process.env.PUBLIC_URL + pic} alt={position} />
         </section>
       </div>
     );

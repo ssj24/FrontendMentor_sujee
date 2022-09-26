@@ -5,11 +5,13 @@ import Destination from './Destination.js';
 import Crew from './Crew.js';
 import Technology from './Technology.js';
 import './assets/styles/App.css';
+import 'animate.css';
 
 class App extends Component {
   state = {
     selectedNav: 0
   };
+
   navChange = (idx) => {
     this.setState({selectedNav: idx})
   }

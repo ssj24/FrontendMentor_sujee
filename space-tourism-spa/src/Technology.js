@@ -41,7 +41,7 @@ class Technology extends Component {
           <p>{description}</p>
         </section>
         <section className="right">
-          <img src={pic} alt={title}/>
+          <img data-aos="slide-left" src={process.env.PUBLIC_URL + pic} alt={title}/>
         </section>
       </div>
     );
