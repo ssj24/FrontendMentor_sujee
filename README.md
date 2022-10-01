@@ -7,7 +7,7 @@ This repository has solutions for Frontend Mentor challenges.
 5. [time tracking dashboard](https://ssj24.github.io/frontendMentor_sujee/time-tracking-dashboard-main)
 6. [to do app](https://ssj24.github.io/frontendMentor_sujee/todo-app-main/)
 7. [space tourism](https://ssj24.github.io/space-tourism-spa/)
-   => [to github repo](https://github.com/ssj24/space-tourism-spa)
+   ==> [to github repo](https://github.com/ssj24/space-tourism-spa)
 
 
 
